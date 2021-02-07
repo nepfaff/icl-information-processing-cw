@@ -7,7 +7,8 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    sockaddr_in saddr = {AF_INET, htons(4000), 0x0100007f};
+    uint32_t addr = 0x0100007f; // 127.0.0.1
+    sockaddr_in saddr = {AF_INET, htons(4000), {addr}};
 
     while(true) {
         int s = socket(AF_INET, SOCK_STREAM, 0);

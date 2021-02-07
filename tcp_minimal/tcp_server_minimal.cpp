@@ -2,11 +2,12 @@
 #include <sys/socket.h>
 #include <netinet/ip.h>
 #include <unistd.h>
+#include <iostream>
 
 using namespace std;
 
 int main() {
-    int s = socket(AF_INET, SOCK_DGRAM, 0);
+    int s = socket(AF_INET, SOCK_STREAM, 0);
     sockaddr_in laddr = {AF_INET, htons(4000), {INADDR_ANY}};
     bind(s, (const sockaddr*)&laddr, sizeof(laddr));
 
@@ -20,6 +21,8 @@ int main() {
         recv(client, &payload, 4, 0);
 
         accumulator += payload;
+
+        cout << "New accumulator value = " << accumulator << endl;
 
         send(client, &accumulator, 4, 0);
 
