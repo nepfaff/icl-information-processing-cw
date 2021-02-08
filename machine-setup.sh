@@ -6,7 +6,8 @@ sudo apt install \
 tmux \
 g++ \
 git \
-make
+make \
+python3
 
 # Changing default editor to vim
 sudo update-alternatives --set editor $(which vim.basic)
