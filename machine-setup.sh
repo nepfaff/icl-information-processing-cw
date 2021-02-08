@@ -7,7 +7,8 @@ tmux \
 g++ \
 git \
 make \
-python3
+python3 \
+curl
 
 # Changing default editor to vim
 sudo update-alternatives --set editor $(which vim.basic)
