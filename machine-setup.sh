@@ -2,13 +2,15 @@
 
 # Installing packages
 sudo apt update
-sudo apt install \
+yes | sudo apt install \
 tmux \
 g++ \
 git \
 make \
 python3 \
 curl \
+sqlite3 \
+libsqlite3-dev \
 
 # Making sure python3.6 is installed
 sudo add-apt-repository ppa:deadsnakes/ppa
